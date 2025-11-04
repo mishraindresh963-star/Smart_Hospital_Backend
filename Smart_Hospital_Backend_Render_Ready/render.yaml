@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: smart-hospital-backend
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: MONGO_URI
+        scope: env
+      - key: JWT_SECRET
+        scope: env
+      - key: PORT
+        scope: env
